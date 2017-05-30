@@ -7,12 +7,14 @@ RegisterServerEvent("Z:newplayer")
 AddEventHandler("Z:newplayer", function(id)
     players[source] = id
     TriggerClientEvent("Z:playerUpdate", -1, players)
+	TriggerClientEvent("Z:playercondis", 1)
 end)
 
 AddEventHandler("playerDropped", function(reason)
     players[source] = nil
     TriggerClientEvent("Z:cleanup", source)
     TriggerClientEvent("Z:playerUpdate", -1, players)
+	TriggerClientEvent("Z:playercondis", 2)
 end)
 
 AddEventHandler("chatMessage", function(p, color, msg)

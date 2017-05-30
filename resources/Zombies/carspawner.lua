@@ -59,7 +59,7 @@ Citizen.CreateThread(function()
 
 			car = CreateVehicle(GetHashKey(choosenCar), newX, newY, z - 500, math.random(), true, true)
 
-			Citizen.Trace("Spawned car\n")
+			--Citizen.Trace("Spawned car\n")
 			table.insert(cars, car)
 		end
 

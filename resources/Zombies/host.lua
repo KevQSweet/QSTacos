@@ -19,7 +19,6 @@ AddEventHandler("Z:timesynchost", function(time)
 					end
 				end
 			end
-			TriggerNetEvent("Z:TimeUpdate", newTime)
 			TriggerServerEvent("Z:timesync", newTime)
 		end
 	end)

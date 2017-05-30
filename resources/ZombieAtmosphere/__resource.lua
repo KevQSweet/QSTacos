@@ -8,5 +8,5 @@ client_scripts {
 		"Atmosphere.lua",
 		"Cars.lua",
 		"Looting.lua",
-		"cleaner.lua",
+		"Cleaner.lua",
 }
