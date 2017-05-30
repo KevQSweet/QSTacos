@@ -1,0 +1,14 @@
+More cars: carspawner
+
+
+inventory: 
+sound
+smell
+sight
+
+
+
+
+Links:
+NPClist: http://www.nextgenupdate.com/forums/gta-5-mods/725735-full-npcs-ped-models-characters-list-case-you-need-p-3.html
+FiveM Dev Forum: https://forum.fivem.net/c/development
