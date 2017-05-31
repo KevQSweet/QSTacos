@@ -19,6 +19,8 @@ local zsight    = 1000000000.0
 local peds = {}
 local players = {}
 local conPlayers = 0
+local canSpawn = false
+
 
 RegisterNetEvent("Z:playercondis")
 AddEventHandler("Z:playercondis", function(addsub)
