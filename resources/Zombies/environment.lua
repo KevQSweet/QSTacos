@@ -2,7 +2,6 @@
 
 -- Allows you to set if weather should be frozen and what weather
 local freezeWeather = true
-
 local weather = "XMAS"
 
 -- Allows you to set if time should be frozen and what time
@@ -20,7 +19,7 @@ Citizen.CreateThread(function()
 	while true do
 		Wait(1) 
 
-		if forceFirstPerson then
+		if forceFirstPerson then 
 			SetFollowPedCamViewMode(4) 
 		end
 
