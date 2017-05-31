@@ -17,6 +17,7 @@ AutoStartResources:
     - ServerAlerts
     - ZombieAtmosphere
     - vehicle-health-system-master
+    - walkingdeadload
 
 # do change
 RconPassword: boobs
