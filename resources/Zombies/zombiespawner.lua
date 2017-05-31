@@ -55,17 +55,34 @@ Citizen.CreateThread(function()
 			if #peds < MaxPeds then
 				x, y, z = table.unpack(GetEntityCoords(GetPlayerPed(-1), true))
 				ZomMods = {"u_m_y_zombie_01", "s_f_y_ranger_01", "a_c_rottweiler", "a_m_m_mexlabor_01", "a_m_m_tramp_01", "a_m_y_methhead_01", "a_m_y_runner_02"}
-				--TriggerServerEvent("DebugThis", "0")
+				TriggerServerEvent("DebugThis", "0")
 				RanZomMod = ZomMods[math.random(1, #ZomMods)]
 				DMessage = RanZomMod
 				RequestModel(RanZomMod)
-				--TriggerServerEvent("DebugThis", "2")
+				TriggerServerEvent("DebugThis", "2")
 				while not HasModelLoaded(RanZomMod) do
 					Wait(1)
 				end
-				--TriggerServerEvent("DebugThis", "3")
+				TriggerServerEvent("DebugThis", "3")
 
-				repeat
+				
+				ran1 = math.random(2)
+				ran2 = math.random(2)
+				ZSpacing = 60
+				ZRadius = 300
+				if ran1 == 1 then
+					newX = x + math.random(60, 300)
+				else
+					newX = x + math.random(-60, -300)
+				end
+				if ran2 == 1 then
+					newX = y + math.random(60, 300)
+				else
+					newX = y + math.random(-60, -300)
+				end
+				TriggerServerEvent("DebugThis", NewX.." "..NewY)
+				
+				--[[repeat
 					Wait(1)
 	
 					newX = x + math.random(-300, 300)
@@ -81,7 +98,7 @@ Citizen.CreateThread(function()
 							canSpawn = true
 						end
 					end
-				until canSpawn
+				until canSpawn]]--
 				
 				--TriggerServerEvent("DebugThis", "6")
 				ped = CreatePed(4, RanZomMod, newX, newY, z - 500, 0.0, true, true)
