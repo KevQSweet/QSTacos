@@ -4,6 +4,7 @@ PreParseResources:
     - mapmanager
 
 AutoStartResources:
+    - QLoadScreen    
     - chat
     - spawnmanager
     - fivem-map-skater
@@ -11,15 +12,12 @@ AutoStartResources:
     - rconlog
     - hardcap # prevents the game from breaking
     - scoreboard
+    - QServerAlerts
     - QPersistence
-    - QLoadScreen
     - QHud
     - QCommands
     - QZombies
     - QLocations
-    - QAtmosphere
-    - walkingdeadload
-
 
 # do change
 RconPassword: boobs
