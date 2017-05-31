@@ -1,0 +1,184 @@
+body
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+.backdrop
+{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+
+    background-image: url(images/image1.jpg);
+   background-size: cover;
+}
+.backdrop2
+{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+
+    background-image: url(images/image2.jpg);
+   background-size: cover;
+}
+
+.bottom
+{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#gradient
+{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+
+    height: 25%;
+
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+@font-face {
+    font-family: 'cursive';
+    src: url('cursive.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1, h2 {
+  position: relative;
+  background: transparent;
+  z-index: 0;
+}
+/* add a single stroke */
+h1:before, h2:before {
+  content: attr(title);
+  position: absolute;
+  -webkit-text-stroke: 0.1em #000;
+  z-index: -1;
+}
+
+
+.letni
+{
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    bottom: 10%;
+
+    z-index: 5;
+
+    color: #fff;
+
+    font-family: "Segoe UI";
+}
+
+.letni p
+{
+    font-size: 22px;
+
+    margin-left: 3px;
+
+    margin-top: 0px;
+}
+
+.letni h2, .letni h3
+{
+    font-family: cursive;
+
+    text-transform: uppercase;
+
+    font-size: 50px;
+
+    margin: 0px;
+
+    display: inline-block;
+}
+
+.top
+{
+    color: #fff;
+
+    position: absolute;
+    top: 28%;
+    left: 5%;
+    right: 5%;
+}
+
+.top h1
+{
+    font-family: cursive;
+    font-size: 60px;
+    text-align: center;
+
+    margin: 0px;
+}
+
+.top h2
+{
+    font-family: cursive;
+    font-size: 25px;
+    text-align: center;
+
+    margin: 0px;
+
+    color: #ddd;
+}
+.bottom h2{
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: rgba(255, 232, 0, 0.24) 0px 4px 9px;
+    font-family: cursive;
+    margin-top: 25px;
+    position: relative;
+    background: transparent;
+    z-index: 0;
+}
+
+.loadbar
+{
+    width: 100%;
+    background-color: rgba(45, 113, 44, 0.9);
+    padding: 6px;
+    border-left: 5px solid rgba(255, 165, 0, 0.33);
+    border-right: 5px solid rgba(255, 165, 0, 0.33);
+    border-left-style: dotted;
+    border-right-style: dotted;
+    height: 20px;
+    margin-left: 2px;
+    margin-right: 3px;
+    margin-top: 65vh;
+    margin-bottom: 5px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+}
+
+.thingy
+{
+    width: 10%;
+    background-color: rgba(101, 172, 44, 0.9);
+    padding: 6px;
+    margin-top: -6px;
+    height: 20px;
+    position: absolute;
+    left: 10%;
+}
+.img-right{
+        position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.img-left{
+        position: fixed;
+    bottom: 0;
+    left: 0;
+}
