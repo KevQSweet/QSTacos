@@ -4,6 +4,7 @@ PreParseResources:
     - mapmanager
 
 AutoStartResources:
+    - QLoadScreen    
     - chat
     - spawnmanager
     - fivem-map-skater
@@ -12,13 +13,11 @@ AutoStartResources:
     - hardcap # prevents the game from breaking
     - scoreboard
     - QPersistence
-    - QLoadScreen
     - QHud
     - QCommands
     - QZombies
     - QLocations
     - QAtmosphere
-    - walkingdeadload
 
 
 # do change

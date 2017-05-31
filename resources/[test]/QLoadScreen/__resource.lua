@@ -1,6 +1,6 @@
 files {
     'index.html',
-    'wl_load.css',
+    'wd_load.css',
     'bankgothic.ttf',
     'images/images1.jpg', 'images/image2.jpg', 'images/l_1.png', 'images/l_2.png'
 }
