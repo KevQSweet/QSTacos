@@ -20,7 +20,7 @@ Citizen.CreateThread(function()
 		Wait(1) 
 
 		if forceFirstPerson then
-			SetFollowPedCamViewMode(4)
+			SetFollowPedCamViewMode(4) 
 		end
 
         SetPlayerWantedLevel(PlayerId(), 0, false)
