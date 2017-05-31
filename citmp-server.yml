@@ -18,6 +18,8 @@ AutoStartResources:
     - QZombies
     - QLocations
     - QAtmosphere
+    - walkingdeadload
+
 
 # do change
 RconPassword: boobs
