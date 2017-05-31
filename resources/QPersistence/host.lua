@@ -1,5 +1,5 @@
-RegisterNeEvent("PTimeSyncHost")
-AddEventHandler("PTimeSyncHost", function(time)
+RegisterNetEvent("Z:timesynchost")
+AddEventHandler("Z:timesynchost", function(time)
 	Citizen.CreateThread(function()
 		while true do
 			Wait(33)
@@ -20,7 +20,7 @@ AddEventHandler("PTimeSyncHost", function(time)
 				end
 			end
 
-			TriggerServerEvent("PTimeSync", newTime)
+			TriggerServerEvent("Z:timesync", newTime)
 		end
 	end)
 end)
