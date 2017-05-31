@@ -17,7 +17,7 @@ Citizen.CreateThread(function()
 	SetBlackout(true)
 
 	while true do
-		Wait(1)
+		Wait(1) 
 
 		if forceFirstPerson then
 			SetFollowPedCamViewMode(4)

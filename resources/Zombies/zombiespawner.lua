@@ -69,7 +69,7 @@ Citizen.CreateThread(function()
 				ran1 = math.random(1, 2)
 				TriggerServerEvent("DebugThis", "4")
 				ran2 = math.random(1, 2)
-				TriggerServerEvent("DebugThis", "5")
+				TriggerServerEvent("DebugThis", "5") 
 				ZSpacing = 60
 				TriggerServerEvent("DebugThis", "6")
 				ZRadius = 300
