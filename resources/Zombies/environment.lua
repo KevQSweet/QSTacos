@@ -2,7 +2,8 @@
 
 -- Allows you to set if weather should be frozen and what weather
 local freezeWeather = true
-local weather = "BLIZZARD"
+
+local weather = "XMAS"
 
 -- Allows you to set if time should be frozen and what time
 local freezeTime = true
