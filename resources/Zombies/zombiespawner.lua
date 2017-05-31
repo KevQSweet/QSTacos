@@ -82,8 +82,6 @@ Citizen.CreateThread(function()
 				until canSpawn
 				
 				--TriggerServerEvent("DebugThis", "6")
-				newX = x + math.random(-400, 400)
-				newY = y + math.random(-400, 400)
 				ped = CreatePed(4, RanZomMod, newX, newY, z - 500, 0.0, true, true)
 				
 				zarmour = math.random(65, 200)
