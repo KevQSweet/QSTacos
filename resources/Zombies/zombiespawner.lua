@@ -66,19 +66,27 @@ Citizen.CreateThread(function()
 				TriggerServerEvent("DebugThis", "3")
 
 				
-				ran1 = math.random(2)
-				ran2 = math.random(2)
+				ran1 = math.random(1, 2)
+				TriggerServerEvent("DebugThis", "4")
+				ran2 = math.random(1, 2)
+				TriggerServerEvent("DebugThis", "5")
 				ZSpacing = 60
+				TriggerServerEvent("DebugThis", "6")
 				ZRadius = 300
+				TriggerServerEvent("DebugThis", "7")
 				if ran1 == 1 then
+				TriggerServerEvent("DebugThis", "8")
 					newX = x + math.random(60, 300)
 				else
 					newX = x + math.random(-60, -300)
+				TriggerServerEvent("DebugThis", "9")
 				end
 				if ran2 == 1 then
-					newX = y + math.random(60, 300)
+					newY = y + math.random(60, 300)
+				TriggerServerEvent("DebugThis", "10")
 				else
-					newX = y + math.random(-60, -300)
+					newY = y + math.random(-60, -300)
+				TriggerServerEvent("DebugThis", "11")
 				end
 				TriggerServerEvent("DebugThis", NewX.." "..NewY)
 				
