@@ -16,4 +16,5 @@ client_scripts {
 		"killplayer.lua",
 		"drawtext.lua",
 		"host.lua",
+		"map.lua",
 }
