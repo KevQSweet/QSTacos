@@ -11,12 +11,13 @@ AutoStartResources:
     - rconlog
     - hardcap # prevents the game from breaking
     - scoreboard
-    - foodhud
-    - frfuel
-    - Zombies
-    - ServerAlerts
-    - ZombieAtmosphere
-    - vehicle-health-system-master
+    - QPersistence
+    - QLoadScreen
+    - QHud
+    - QCommands
+    - QZombies
+    - QLocations
+    - QAtmosphere
 
 # do change
 RconPassword: boobs
