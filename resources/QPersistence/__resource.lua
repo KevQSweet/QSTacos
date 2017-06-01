@@ -7,11 +7,11 @@ server_scripts {
 
 client_scripts {
 		"newplayer.lua",
-		--"nopeds.lua",
+		"nopeds.lua",
 		--"zombiespawner.lua",
 		--"wreckspawner.lua",
 		--"weaponspawner.lua",
-		--"carspawner.lua",
+		"carspawner.lua",
 		"environment.lua",
 		"killplayer.lua",
 		"drawtext.lua",

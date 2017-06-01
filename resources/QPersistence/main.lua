@@ -20,7 +20,7 @@ AddEventHandler("chatMessage", function(p, color, msg)
         if cmd == "/die" then
         	TriggerClientEvent("Z:killplayer", p)
         	CancelEvent()
-        end
+		end
     end
 end)
 
