@@ -1,0 +1,63 @@
+GET_PED_RELATIONSHIP_GROUP_DEFAULT_HASH(Ped ped)
+GET_PED_NEARBY_PEDS(Ped ped, int *sizeAndPeds, int ignore)
+GET_PED_NEARBY_VEHICLES(Ped ped, int *sizeAndVehs)
+SET_VEHICLE_DENSITY_MULTIPLIER_THIS_FRAME(float multiplier) // 245A6883D966D537 F4187E51
+• Usage
+
+→ Use this native inside a looped function.
+→ Values:
+→ 0.0 = no vehicles on streets
+→ 1.0 = normal vehicles on streets
+SET_PARKED_VEHICLE_DENSITY_MULTIPLIER_THIS_FRAME(float multiplier)
+void SET_VEHICLE_DOOR_OPEN(Vehicle vehicle, int doorIndex, BOOL loose, BOOL openInstantly) // 7C65DAC73C35C862 BB75D38B
+doorIndex:
+0 = Front Left Door
+1 = Front Right Door
+2 = Back Left Door
+3 = Back Right Door
+4 = Hood
+5 = Trunk
+6 = Back
+7 = Back2
+void REMOVE_VEHICLE_WINDOW(Vehicle vehicle, int windowIndex) // A711568EEDB43069 BB8104A3
+windowIndex:
+0 = Front Right Window
+1 = Front Left Window
+2 = Back Right Window
+3 = Back Left Window
+SMASH_VEHICLE_WINDOW(Vehicle vehicle, int index)
+BOOL IS_VEHICLE_ALARM_ACTIVATED(Vehicle vehicle)
+void SET_VEHICLE_ALARM(Vehicle vehicle, BOOL state)
+
+
+Zombie Attributes:
+SetPedRelationshipGroupHash(ped, GetHash("zombeez"))
+SetPedArmour(ped, 100)
+SetPedAccuracy(ped, 25)
+SetPedSeeingRange(ped, 1000000.0)
+SetPedHearingRange(ped, 1000000.0)
+SetAmbientVoiceName(ped, "ALIENS")
+SetPedFleeAttributes(ped, 0, 0)
+SetPedCombatAttributes(ped, 0, 0)--can use cover
+SetPedCombatAttributes(ped, 1, 0)--can use vehicles
+SetPedCombatAttributes(ped, 46, 1)--Always fight
+SetPedCombatAttributes(ped, 16, 1)--?? in orig script
+SetPedCanDropFromHeight(ped, true)
+SetPedPathCanUseLadders(ped, true)
+SetPedPathMayEnterWater(ped, true)
+SetPedPathPreferToAvoidWater(ped, false)
+SetPedPathAvoidFire(ped, false)
+SetPedIsDrunk(ped, true)
+RequestAnimSet("move_m@drunk@verydrunk")
+	while not HasAnimSetLoaded("move_m@drunk@verydrunk") do
+		Wait(1)
+	end
+SetPedMovementClipset(ped, "move_m@drunk@verydrunk", 1.0)
+TaskWanderStandard(ped, 1.0, 10)
+table.insert(peds, ped)
+
+
+Remaining Civilian attributes:
+SetPedSteersAroundPeds(ped, false)
+SetPedSteersAroundVehicles(ped, true)
+
