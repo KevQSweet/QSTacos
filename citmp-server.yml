@@ -18,6 +18,7 @@ AutoStartResources:
     - QCommands
     - QZombies
     - QLocations
+    - vehicle-health-system-master
 
 # do change
 RconPassword: boobs
