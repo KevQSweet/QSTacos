@@ -27,7 +27,7 @@ Citizen.CreateThread(function()
 			SetPlayerVehicleDamageModifier(ped, 100) -- Seems to not work at the moment --
 			if damage < 85 then
 				SetVehicleUndriveable(vehicle, true)
-				ShowNotification("~g~Vehicle is too damaged.")
+				--ShowNotification("~g~Vehicle is too damaged.")
 			end
 		end
 	end

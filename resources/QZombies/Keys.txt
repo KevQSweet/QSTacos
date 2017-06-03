@@ -61,3 +61,17 @@ Remaining Civilian attributes:
 SetPedSteersAroundPeds(ped, false)
 SetPedSteersAroundVehicles(ped, true)
 
+
+
+
+-----------------------------
+Other Cool functions
+
+
+function ShowNotification(text)
+	SetNotificationTextEntry("STRING")
+	AddTextComponentString(text)
+	DrawNotification(false, false)
+end
+ShowNotification("~g~Vehicle is too damaged.")
+
