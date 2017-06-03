@@ -35,6 +35,7 @@ end)
 RegisterNetEvent("Z:playerUpdate")
 AddEventHandler("Z:playerUpdate", function(mPlayers)
 	players = mPlayers
+	TriggerServerEvent("db:PlayerUpdate", players)
 end)
 
 

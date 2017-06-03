@@ -1,8 +1,9 @@
+require "resources/Qdb/lib/MySQL"
 --set db connection info here
-local ip = "192.0.0.1"
-local database = "Qdb"
-local username = ""
-local password = "password"
+local ip = "127.0.0.1"
+local database = "qdb"
+local username = "root"
+local password = "Cults1992"
 
 --database saves
 local LastPosX = 0.0
@@ -19,6 +20,7 @@ players = {}
 RegisterServerEvent("db:PlayerUpdate")
 AddEventHandler("db:PlayerUpdate", function(mPlayers)
 	players = mPlayers
+	TriggerServerEvent("SAlerts", "db players updated")
 end)
 
 db = {}
