@@ -29,13 +29,12 @@ AddEventHandler("Z:playercondis", function(addsub)
 	else
 		conPlayers = conPlayers - 1
 	end
-TriggerServerEvent("DebugThis", "players updated "..conPlayers)
+TriggerServerEvent("SAlerts", "players updated "..conPlayers)
 end)
 
 RegisterNetEvent("Z:playerUpdate")
 AddEventHandler("Z:playerUpdate", function(mPlayers)
 	players = mPlayers
-	TriggerServerEvent("db:PlayerUpdate", players)
 end)
 
 
@@ -45,51 +44,52 @@ Citizen.CreateThread(function()
 	SetRelationshipBetweenGroups(5, GetHashKey("zombeez"), GetHashKey("PLAYER"))
 	SetRelationshipBetweenGroups(5, GetHashKey("PLAYER"), GetHashKey("zombeez"))
 	SetAiMeleeWeaponDamageModifier(25.0)
-	TriggerServerEvent("DebugThis", "start")
+	TriggerServerEvent("SAlerts", "start")
 
 		MaxPeds = 200 * math.sin(conPlayers / 48) + 100	
 		while true do
 			Wait(1)
 
 			--update max zombies
-			MaxPeds = 200 * sin(conPlayers / 48) + 100
+			MaxPeds = 200 * math.sin(conPlayers / 48) + 100
 			if #peds < MaxPeds then
 				x, y, z = table.unpack(GetEntityCoords(GetPlayerPed(-1), true))
 				ZomMods = {"u_m_y_zombie_01", "s_f_y_ranger_01", "a_c_rottweiler", "a_m_m_mexlabor_01", "a_m_m_tramp_01", "a_m_y_methhead_01", "a_m_y_runner_02"}
-				--TriggerServerEvent("DebugThis", "0")
+				--TriggerServerEvent("SAlerts", "0")
 				RanZomMod = ZomMods[math.random(1, #ZomMods)]
 				DMessage = RanZomMod
 				RequestModel(RanZomMod)
-				--TriggerServerEvent("DebugThis", "2")
+				--TriggerServerEvent("SAlerts", "2")
 				while not HasModelLoaded(RanZomMod) do
 					Wait(1)
 				end
-				--TriggerServerEvent("DebugThis", "3")
+				--TriggerServerEvent("SAlerts", "3")
 
 				
 				ran1 = math.random(1, 2)
-				--TriggerServerEvent("DebugThis", "is "..ran1) 
+				--TriggerServerEvent("SAlerts", "is "..ran1) 
 				ran2 = math.random(1, 2)
-				--TriggerServerEvent("DebugThis", "is "..ran2) 
+				--TriggerServerEvent("SAlerts", "is "..ran2) 
 				ZSpacing = 60 
-				--TriggerServerEvent("DebugThis", "6")
+				--TriggerServerEvent("SAlerts", "6")
 				ZRadius = 300
-				--TriggerServerEvent("DebugThis", "7")
-				newX = x + math.random(ZSpacing, 300)
+				--TriggerServerEvent("SAlerts", "7")
+				newX = x + math.random(ZSpacing, (300))
+				newY = y + math.random(ZSpacing, (300))
 				if ran1 > 1 then	
-					--TriggerServerEvent("DebugThis", newX)
+					--TriggerServerEvent("SAlerts", newX)
 				else
 					newX = newX * -1
-					--TriggerServerEvent("DebugThis", newX)
+					--TriggerServerEvent("SAlerts", newX)
 				end
 
 				if ran2 > 1 then	
-					--TriggerServerEvent("DebugThis", newY)
+					--TriggerServerEvent("SAlerts", newY)
 				else
 					newY = newY * -1
-					--TriggerServerEvent("DebugThis", newY)
+					--TriggerServerEvent("SAlerts", newY)
 				end
-				TriggerServerEvent("DebugThis", newX.." "..newY)
+				--TriggerServerEvent("SAlerts", newX.." "..newY)
 				
 				--[[repeat
 					Wait(1)
@@ -109,18 +109,18 @@ Citizen.CreateThread(function()
 					end
 				until canSpawn]]--
 				
-				--TriggerServerEvent("DebugThis", "6")
+				--TriggerServerEvent("SAlerts", "6")
 				ped = CreatePed(4, RanZomMod, newX, newY, z - 500, 0.0, true, true)
 				
 				zarmour = math.random(65, 200)
 				zaccuracy = math.random(1, 26)
 				zsight = math.random(3500000, 6000000) + 0.1
 				zears = math.random(3700000, 8000000) + 0.1
-				--TriggerServerEvent("DebugThis", "7")
+				--TriggerServerEvent("SAlerts", "7")
 
 			
 				Wait(20)
-				--TriggerServerEvent("DebugThis", "Zombie: Arm: "..zarmour.." Acc: "..zaccuracy.." Sight: "..zsight.." Hear: "..zears)
+				--TriggerServerEvent("SAlerts", "Zombie: Arm: "..zarmour.." Acc: "..zaccuracy.." Sight: "..zsight.." Hear: "..zears)
 				
 				SetPedArmour(ped, zarmour)
 				SetPedAccuracy(ped, zaccuracy)
@@ -159,7 +159,7 @@ Citizen.CreateThread(function()
 				end
 				table.insert(peds, ped)
 				DMessage = #peds
-				TriggerServerEvent("DebugThis", MaxPeds..":"..DMessage.." Zombies.")
+				--TriggerServerEvent("SAlerts", MaxPeds..":"..DMessage.." Zombies.")
 			end
 				--
 
@@ -167,7 +167,7 @@ Citizen.CreateThread(function()
 				if not DoesEntityExist(ped) then
 					table.remove(peds, i)
 				elseif IsPedDeadOrDying(ped, 1) then
-					TriggerServerEvent("DebugThis", "Zombie Died")
+					TriggerServerEvent("SAlerts", "Zombie Died")
 
 					-- Set ped as no longer needed for despawning
 					Citizen.InvokeNative(0xB736A491E64A32CF, Citizen.PointerValueIntInitialized(ped))

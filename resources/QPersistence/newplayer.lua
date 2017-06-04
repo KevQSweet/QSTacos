@@ -2,10 +2,8 @@
 
 local spawnWithFlashlight = true
 local displayRadar = false
-
 -- CODE --
-
-TriggerServerEvent("Z:newplayer", PlayerId())
+TriggerServerEvent("dbUpdate", PlayerId())
 
 local welcomed = false
 
