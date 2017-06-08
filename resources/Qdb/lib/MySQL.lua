@@ -6,7 +6,7 @@ MySQL.__index = MySQL
 ------------------------------------------------------------------------------------------------------------- Connexion | Connection
 function MySQL.open(self, server, database, userid, password)
 local reflection = clr.System.Reflection
-local assembly = reflection.Assembly.LoadFrom('resources/baseMods/lib/MySql.Data.dll')
+local assembly = reflection.Assembly.LoadFrom('resources/Qdb/lib/MySql.Data.dll')
 self.mysql = clr.MySql.Data.MySqlClient
 self.connection = self.mysql.MySqlConnection("server="..server..";database="..database..";userid="..userid..";password="..password.."")
 self.connection.Open()

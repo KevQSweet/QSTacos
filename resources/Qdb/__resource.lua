@@ -1,9 +1,10 @@
 server_scripts {
-	"server.lua",
-	"dbPlayRelay.lua",
+	"Server_PushPull.lua",
+	"database.lua",
+	
 }
 
 client_scripts {
-	"client.lua",
+	"client_listener.lua",
 	
 }

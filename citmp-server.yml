@@ -20,6 +20,7 @@ AutoStartResources:
     - QLocations
     - vehicle-health-system-master
     - Qdb
+    - frfuel
 
 # do change
 RconPassword: boobs

@@ -4,6 +4,7 @@ RegisterServerEvent("Z:newplayer")
 AddEventHandler("Z:newplayer", function(id)
     players[source] = id
     TriggerClientEvent("Z:playerUpdate", -1, players)
+	TriggerEvent("db:UpdatePlayer", -1)
 	--TriggerClientEvent("Z:playercondis", 1)
 end)
 
