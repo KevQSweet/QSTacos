@@ -9,7 +9,7 @@ function getIdentifier(p)
 	TriggerEvent("SAlerts", id.." passed on request")
 	return id
 end
-
+-------------------------------Broken V Broken -----------------------
 RegisterServerEvent("db:newplayer")
 AddEventHandler("db:newplayer", function()
 	SA("Event New Player called: "..players[source])
@@ -34,8 +34,8 @@ AddEventHandler("playerDropped", function(reason)
 	data = players[i]
 	TriggerEvent("db:UpdateDrop", data)
 end)
-
-
+----------------------------Broken ^ Broken -----------------------------
+--works
 RegisterServerEvent("db:updateplayercache")
 AddEventHandler("db:updateplayercache", function(x, y, z, heading, r, t, h)
 	name = tostring(GetPlayerName(source))
