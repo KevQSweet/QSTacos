@@ -6,56 +6,40 @@ require "resources/QCoreEssential/lib/MySQL"
   
 --Manage channels and determine data length
 
---Pull Entire Profile information
-RegisterServerEvent("Qdb:PullTkeyet")
-function PullInfo(dbname, target)                     -----------REVALUATE WHOLE FUNCTION!-------------------
-  for key, value in pairs(target) do
-    if assign_1 == "" then                                              -- start building input data
-      assign_1 = "'"..key.."'"
-    else
-      assign_1 = assign_1..", '"..key.."'"
-    end
-  end
-  selectBy = keys.id
-  local request = MySQL.Async.fetchALL("SELECT * FROM "..dbname.." WHERE "..selectBy.." = '"..target.name.."'")
-  --not sure if this is actual function or obsolete V
-  local result = MySQL.Async.getResults(request, {assign_1})
-  
-end
-
-
-
 --either Push specific information
-function UpdateDB()
+AddEventHandler("UpdateDB", function(dbname, target)
 
-  local target = {"id"="testing", "name"="test"}
+  local target = {["id"]="identifier", ["x_coord"]=123, ["y_coord"]=456, ["z_coord"]=789}
+  local test = {["id"]="identifier", ["y_coord"]=456, ["z_coord"]=789}
   local assign_1 = ""
   local assign_2 = ""
-  
+  local dbname = "testdb"
   --compare database fields and insert missing fields, assigned with correct variable types
-  
-  MySQL.Async.fetchAll("SELECT * FROM "..dbname, {}, function(test) 
-  end)
-  
-  for key, value in pairs(target) do
-    
-    if test[key] == nil then                                      --check against existing values of other accounts and create any missing fields
-      MySQL.Async.execute("INSERT INTO "..dbname" (`"..key.."`) VALUES ('@data')", {['@data'] = value})
-    end 
-    
-    if i == 1 then                                              -- start building input data
-      assign_1 = "'"..key.."'='@"..key.."'"
-      assign_2 = "['@"..key.."']="..value
-    else
-      assign_1 = assign_1..", '"..key.."'='@"..key.."'"
-      assign_2 = assign_2..", ['@"..key.."']="..value   
+  if target.id == nil then
+    print("identifier not set")
+  else
+
+    local counter = 0
+    for key, value in pairs(target) do
+      if value == nil then
+        print("ERROR: "..key.." has no value")
+      else
+        MySQL.Async.fetchAll("SELECT * FROM "..dbname, {}, function(test) 
+          if test[key] == nil then                                      --check against existing values of other accounts and create any missing fields
+            MySQL.Async.execute("INSERT INTO "..dbname.." (`"..key.."`) VALUES ('"..value.."')")
+          end
+        end)
+        counter = counter + 1 
+        if counter == 1 then                                              -- start building input data
+          assign_1 = "'"..key.."'='"..value.."'"
+        else
+          assign_1 = assign_1..", '"..key.."'='"..value.."'" 
+        end
+      end
     end
   end
   --finallize query
-  print("UPDATE "..dbname.." SET ("..assign_1..") WHERE id_ingame = '@id'", {assign_2})
-  MySQL.Async.execute("UPDATE "..dbname.." SET ("..assign_1..") WHERE id_ingame = '@id'", {assign_2})
+  print("UPDATE "..dbname.." SET ("..assign_1..") WHERE id_ingame = '"..target.id.."'")
+  MySQL.Async.execute("UPDATE "..dbname.." SET ("..assign_1..") WHERE id_ingame = '"..target.id.."'")
 end
 --debug callback
-function cb(message)
-	TriggerEvent("Callback", message)
-end
