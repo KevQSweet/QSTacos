@@ -18,19 +18,26 @@ AddEventHandler("UpdateDB", function(dbname, target)
 
         local counter = 0
         for key, value in pairs(target) do
-          if value == nil then
+          if not value then
             print("ERROR: "..key.." has no value")
           else
-            MySQL.Async.fetchAll("SELECT * FROM "..dbname, {}, function(test) 
-                if test[key] == nil then                                      --check against existing values of other accounts and create any missing fields
-                  MySQL.Async.execute("INSERT INTO "..dbname.." (`"..key.."`) VALUES ('"..value.."')")
-                end
-              end)
+            if type(key)== "table" then 
+              for k, v in pairs(key) do
+              
+              end
+            else
+              
+              MySQL.Async.fetchAll("SELECT * FROM "..dbname, {}, function(test) 
+              if test[key] == nil then                                      --check against existing values of other accounts and create any missing fields
+                MySQL.Async.execute("INSERT INTO "..dbname.." (`"..key.."`) VALUES ('"..value.."')")
+              end
+            end)
             counter = counter + 1 
             if counter == 1 then                                              -- start building input data
               assign_1 = key.."='"..value.."'"
             else
               assign_1 = assign_1..","..key.."='"..value.."'" 
+            end  
             end
           end
         end
@@ -39,4 +46,8 @@ AddEventHandler("UpdateDB", function(dbname, target)
     --finallize query
     print("UPDATE "..dbname.." SET ("..assign_1..") WHERE id_ingame = '"..target.id.."'")
     MySQL.Async.execute("UPDATE "..dbname.." SET ("..assign_1..") WHERE id_ingame = '"..target.id.."'")
+  end
+  
+  function TestUpBuild(key, value, ass_1)
+    
   end
