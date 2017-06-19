@@ -26,7 +26,7 @@ AddEventHandler("UpdateDB", function(dbname, target)
 						function Recall(key, keyparse)
 							for k, v in pairs(key) do
 								keyparse = key.."_"..k
-								if type(k) = "table" then
+								if type(k) == "table" then
 									k = key.k
 									Recall(k, keyparse)
 								else
